@@ -8,12 +8,14 @@ import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 
-class login : AppCompatActivity() {
+class activity_register : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_login)
+        setContentView(R.layout.activity_register)
 
         // Atur teks "MechaCare" pada TextView dengan ID tv_logo
         val textViewLogo = findViewById<TextView>(R.id.tv_logo)
@@ -32,7 +34,7 @@ class login : AppCompatActivity() {
 
         // Atur teks "Belum punya akun? Klik Untuk Daftar" pada TextView dengan ID daftar
         val textViewDaftar = findViewById<TextView>(R.id.daftar)
-        val spannableDaftar = SpannableString("Belum punya akun? Klik Untuk Daftar")
+        val spannableDaftar = SpannableString("Sudah punya akun? Klik Untuk Masuk")
         spannableDaftar.setSpan(
             ForegroundColorSpan(ContextCompat.getColor(this, R.color.blue)),
             17, spannableDaftar.length, // "Klik Untuk Daftar"

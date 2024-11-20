@@ -13,11 +13,33 @@
         android:theme="@style/Theme.Mechacare"
         tools:targetApi="31">
         <activity
+            android:name=".activity_register"
+            android:theme="@style/Theme.Design.Light.NoActionBar"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity_button_start"
+            android:exported="true"
+            android:theme="@style/Theme.Design.Light.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".start"
-            android:exported="false" />
+            android:exported="true"
+            android:theme="@style/Theme.Design.Light.NoActionBar" />
         <activity
             android:name=".login"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/Theme.Design.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

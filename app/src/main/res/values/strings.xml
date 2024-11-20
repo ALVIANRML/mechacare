@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">MechaCare</string>
+    <string name="start">Mulai</string>
+    <string name="welcome">Selamat datang di MechaCare, solusi cepat dan mudah untuk menemukan bengkel dan mekanik terpercaya di sekitar Anda, kapan saja!</string>
+    <string name="email">Email</string>
+    <string name="input_email">Masukkan Email Anda....</string>
+    <string name="password">Password</string>
+    <string name="input_password">******</string>
+    <string name="login">Login</string>
+    <string name="daftar">Belum punya akun? Klik Untuk Daftar</string>
+    <string name="register">Register</string>
+    <string name="nama_pengguna">Nama Pengguna</string>
+    <string name="input_nama_pengguna">Masukkan Nama Pengguna Anda....</string>
+    <string name="konfirmasi_password">Konfirmasi Password</string>
+
+
+
 </resources>
