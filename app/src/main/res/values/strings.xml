@@ -12,6 +12,15 @@
     <string name="nama_pengguna">Nama Pengguna</string>
     <string name="input_nama_pengguna">Masukkan Nama Pengguna Anda....</string>
     <string name="konfirmasi_password">Konfirmasi Password</string>
+    <string name="cari">Cari.....</string>
+    <string name="selamat_datang">Selamat Datang di MechaCare</string>
+    <string name="layanan">Layanan MechaCare</string>
+    <string name="pencarian_bengkel_terdekat">Pencarian Bengkel Terdekat</string>
+    <string name="jual_beli_sparepart">Jual Beli Sparepart</string>
+    <string name="home_service">Home Service</string>
+    <string name="riwayat_service">Riwayat Service</string>
+    <string name="teks_berita">Cara Menghitung Volume Oli yang Tepat untuk Motor Mati</string>
+
 
 
 
