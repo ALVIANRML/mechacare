@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Tombol Kembali -->
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_back"
+
+            android:layout_marginBottom="16dp" />
+
+        <!-- Judul Halaman -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tambah Kendaraan"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Informasi Motor"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Gambar Motor -->
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:src="@drawable/motor_example"
+            android:scaleType="centerInside"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Form Input -->
+        <EditText
+            android:id="@+id/modelMotor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Model Motor"
+            android:layout_marginBottom="8dp" />
+
+        <EditText
+            android:id="@+id/tahunProduksi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Tahun Produksi"
+            android:layout_marginBottom="8dp" />
+
+        <EditText
+            android:id="@+id/varianMotor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Varian Motor"
+            android:layout_marginBottom="8dp" />
+
+        <EditText
+            android:id="@+id/warnaMotor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Warna Motor"
+            android:layout_marginBottom="8dp" />
+
+        <EditText
+            android:id="@+id/nomorPolisi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nomor Polisi"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Tombol -->
+        <Button
+            android:id="@+id/btnTambahKendaraan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TAMBAH KENDARAAN"
+            android:background="@color/white"
+            android:textColor="@color/red"
+            android:layout_marginBottom="8dp" />
+
+        <Button
+            android:id="@+id/btnBatal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Batal"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:layout_marginBottom="16dp" />
+    </LinearLayout>
+</ScrollView>

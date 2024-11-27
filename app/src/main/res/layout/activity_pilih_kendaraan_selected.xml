@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Tombol Kembali -->
+    <ImageView
+        android:id="@+id/btnBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_back"
+
+        android:layout_marginBottom="16dp" />
+
+    <!-- Deskripsi -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tersedia kapan pun anda mau tanpa memikirkan waktu anda"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginBottom="16dp"
+        android:textSize="16sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Informasi Motor"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="14sp"
+        android:layout_marginBottom="16dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tambahkan Motor untuk diperbaiki"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="14sp"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Informasi Motor -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/bg_dashed_box"
+        android:padding="16dp"
+        android:gravity="center">
+
+        <!-- Gambar Motor -->
+        <ImageView
+            android:layout_width="186dp"
+            android:layout_height="101dp"
+            android:src="@drawable/motor_example"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Varian Motor dan Nomor Polisi -->
+        <TextView
+            android:id="@+id/tvMotorInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textSize="16sp"
+            android:layout_marginTop="8dp" />
+    </LinearLayout>
+
+    <!-- Tombol -->
+    <TextView
+        android:id="@+id/btnPilihKendaraanLain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="PILIH KENDARAAN LAIN"
+        android:textColor="@color/red"
+        android:gravity="center"
+        android:layout_marginTop="16dp" />
+
+    <Button
+        android:id="@+id/btnBerikutnya"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="BERIKUTNYA"
+        android:backgroundTint="@color/red"
+        android:textColor="@color/white"
+        android:layout_marginTop="16dp" />
+</LinearLayout>

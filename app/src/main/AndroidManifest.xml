@@ -13,6 +13,16 @@
         android:theme="@style/Theme.Mechacare"
         tools:targetApi="31">
         <activity
+            android:name=".PilihKendaraanSelectedActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PilihKendaraanActivity"
+            android:theme="@style/Theme.Mechacare"
+            android:exported="false" />
+        <activity
+            android:name=".TambahKendaraanActivity"
+            android:exported="false" />
+        <activity
             android:name=".activity_welcome"
             android:exported="true"
             android:theme="@style/Theme.Design.Light.NoActionBar">
