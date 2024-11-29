@@ -20,6 +20,9 @@
     <string name="home_service">Home Service</string>
     <string name="riwayat_service">Riwayat Service</string>
     <string name="teks_berita">Cara Menghitung Volume Oli yang Tepat untuk Motor Mati</string>
+    <string name="nama_bengkel">Bengkel cuplis M2R</string>
+    <string name="alamat_bengkel">Jl. Abadi No.101–63, Tj. Rejo, Kec. Medan Sunggal, Kota Medan, Sumatera Utara 20122</string>
+    <string name="maps">Maps</string>
 
 
 </resources>
