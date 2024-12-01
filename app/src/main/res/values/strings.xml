@@ -23,6 +23,18 @@
     <string name="nama_bengkel">Bengkel cuplis M2R</string>
     <string name="alamat_bengkel">Jl. Abadi No.101–63, Tj. Rejo, Kec. Medan Sunggal, Kota Medan, Sumatera Utara 20122</string>
     <string name="maps">Maps</string>
+    <string name="nama">Alvian</string>
+    <string name="label_jenis_kelamin">Jenis Kelamin</string>
+    <string name="jenis_kelamin">Laki-Laki</string>
+    <string name="label_tanggal_lahir">Tanggal Lahir</string>
+    <string name="detail_akun">Detail Akun</string>
+    <string name="informasi_pribadi">Informasi Pribadi</string>
+    <string name="email_isi">alvian@gmail.com</string>
+    <string name="password_isi">*******</string>
+    <string name="label_telepon">Telepon</string>
+    <string name="Telepon_isi">081234567890</string>"
+    <string name="profile">Profile</string>"
+    <string name="tanggal_lahir">13–03–2004</string>"
 
 
 </resources>
