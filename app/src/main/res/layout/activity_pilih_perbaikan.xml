@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Tombol Kembali -->
+    <ImageView
+        android:id="@+id/iv_arrowback"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/ic_back"
+app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="16dp" />
+
+    <LinearLayout
+        android:id="@+id/llsearch"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/searchbar_background"
+        android:padding="8dp"
+        android:gravity="center_vertical"
+        android:layout_margin="16dp"
+        android:elevation="4dp"
+        android:layoutDirection="ltr"
+
+        android:radius="12dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/tv_deskripsi"
+
+        >
+
+        <!-- Search Input -->
+        <EditText
+            android:id="@+id/search_input"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@null"
+            android:hint="@string/cari"
+            android:padding="8dp"
+            android:inputType="text"
+            android:textColorHint="@android:color/darker_gray"
+            tools:ignore="Autofill" />
+
+        <!-- Search Icon -->
+        <ImageView
+            android:id="@+id/search_icon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/search_icon"
+            tools:ignore="ContentDescription" />
+    </LinearLayout>
+
+
+    <!-- Deskripsi -->
+    <TextView
+        android:id="@+id/tv_deskripsi"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="Tersedia kapan pun anda mau tanpa memikirkan waktu anda"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/llsearch"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="16dp"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/tv_layanan_service"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Layanan Service"
+        app:layout_constraintTop_toBottomOf="@id/tv_deskripsi"
+        app:layout_constraintStart_toStartOf="@id/iv_arrowback"
+        app:layout_constraintBottom_toTopOf="@id/tv_pilih_kerusakan"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="14sp"
+        android:layout_marginBottom="29dp" />
+
+    <TextView
+        android:id="@+id/tv_pilih_kerusakan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Pilih Layanan Service:"
+        app:layout_constraintTop_toBottomOf="@id/tv_layanan_service"
+        app:layout_constraintStart_toStartOf="@id/tv_layanan_service"
+        app:layout_constraintBottom_toTopOf="@id/recycleview"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="14sp"
+        android:layout_marginBottom="20dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycleview"
+        android:layout_width="match_parent"
+        android:layout_height="450dp"
+        app:layout_constraintTop_toBottomOf="@id/tv_pilih_kerusakan"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/button_next"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+
+    <!-- Tombol Berikutnya -->
+    <Button
+        android:id="@+id/button_next"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="BERIKUTNYA"
+        android:backgroundTint="@color/red"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/recycleview"
+
+        android:layout_marginTop="16dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>
