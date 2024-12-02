@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <ImageView
+        android:id="@+id/btn_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_back"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <ImageView
+        android:id="@+id/iv_detail_image"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/aki"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="40dp"/>
+
+    <TextView
+        android:id="@+id/tv_detail_deskripsi"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Rp80.000"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_detail_image"/>
+    
+    <TextView
+        android:id="@+id/tv_detail_deskripsi_1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Aki Accu Motor Yuasa YTX12 BS YTX12-BS MF Original"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_detail_deskripsi"/>
+
+    <TextView
+    android:id="@+id/tv_detail_deskripsi_2"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="20dp"
+    android:text="Product Spestification \nVoltase : 12 V \nAmpere : 10,5 Ah(20AH)/180 CCA \nDimensi PxLxT(mm) : 151x88x131"
+    android:textSize="16sp"
+    android:textColor="@color/black"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/tv_detail_deskripsi_1"/>
+
+    <Button
+        android:id="@+id/btn_buy"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Beli"
+        android:textColor="@color/white"
+        android:background="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_detail_deskripsi_2"
+        android:layout_marginTop="150dp"
+        android:layout_marginHorizontal="60dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

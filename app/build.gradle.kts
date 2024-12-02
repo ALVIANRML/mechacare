@@ -7,6 +7,10 @@ android {
     namespace = "com.example.mechacare"
     compileSdk = 35
 
+    buildFeatures {
+        viewBinding = true
+    }
+
     defaultConfig {
         applicationId = "com.example.mechacare"
         minSdk = 24
