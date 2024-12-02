@@ -15,7 +15,7 @@ class RiwayatAdapter (private val riwayatlist: List<Riwayat>) : RecyclerView.Ada
         val jenisService: TextView = itemView.findViewById(R.id.tv_jenis_service)
         val jenisKendaraan: TextView = itemView.findViewById(R.id.tv_jenis_kendaraan)
         val biayaService: TextView = itemView.findViewById(R.id.tv_biaya_service)
-        val tanggalService: TextView = itemView.findViewById(R.id.tv_tanggal_lahir)
+        val tanggalService: TextView = itemView.findViewById(R.id.tanggal_service)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RiwayatViewHolder {
