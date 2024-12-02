@@ -34,7 +34,14 @@
     <string name="label_telepon">Telepon</string>
     <string name="Telepon_isi">081234567890</string>"
     <string name="profile">Profile</string>"
-    <string name="tanggal_lahir">13–03–2004</string>"
+    <string name="tanggal_lahir">13–03–2004</string>
+    <string name="ganti_kanvas_rem">Ganti Kanvas Rem</string>
+    <string name="jenis_service">Jenis Service</string>
+    <string name="tanggal_service">02-12-2024</string>
+    <string name="jenis_kendaraan">Jenis Kendaraan</string>
+    <string name="honda_vario">Honda Vario</string>
+    <string name="biaya_service">Biaya Service</string>
+    <string name="total_service">Rp.50.000</string>"
 
 
 </resources>
