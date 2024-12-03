@@ -13,16 +13,24 @@
         </DropdownSelection>
         <DialogSelection />
       </SelectionState>
-      <SelectionState runConfigName="activity_welcome">
-        <option name="selectionMode" value="DROPDOWN" />
-      </SelectionState>
-      <SelectionState runConfigName="PencarianBengkel">
-        <option name="selectionMode" value="DROPDOWN" />
-      </SelectionState>
-      <SelectionState runConfigName="DetailBengkel">
-        <option name="selectionMode" value="DROPDOWN" />
-      </SelectionState>
-      <SelectionState runConfigName="RiwayatService">
+<SelectionState runConfigName="BillingAdressActivity">
+  <option name="selectionMode" value="DROPDOWN" />
+</SelectionState>
+<SelectionState runConfigName="Pembayaran">
+  <option name="selectionMode" value="DROPDOWN" />
+</SelectionState>
+<SelectionState runConfigName="activity_welcome">
+  <option name="selectionMode" value="DROPDOWN" />
+</SelectionState>
+<SelectionState runConfigName="PencarianBengkel">
+  <option name="selectionMode" value="DROPDOWN" />
+</SelectionState>
+<SelectionState runConfigName="DetailBengkel">
+  <option name="selectionMode" value="DROPDOWN" />
+</SelectionState>
+<SelectionState runConfigName="RiwayatService">
+  <option name="selectionMode" value="DROPDOWN" />
+</SelectionState>
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
       <SelectionState runConfigName="PilihPerbaikan">
