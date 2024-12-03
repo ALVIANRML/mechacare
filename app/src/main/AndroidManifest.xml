@@ -18,6 +18,15 @@
         tools:replace="android:allowBackup"
         tools:targetApi="31">
         <activity
+            android:name=".PembayaranAkhir"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".Pembayaran"
             android:exported="true">
             <intent-filter>
@@ -97,14 +106,12 @@
             android:theme="@style/Theme.Design.Light.NoActionBar" />
         <activity
             android:name=".TambahKendaraanActivity"
-        <activity
-            android:name=".History"
             android:exported="true"
             android:theme="@style/Theme.Design.Light.NoActionBar">
             <intent-filter>
-                 <action android:name="android.intent.action.MAIN" />
-              
-                 <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
