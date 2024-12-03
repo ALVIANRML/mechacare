@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+android:id="@+id/ll_pilih"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:background="@drawable/berita_text_bg"
+android:orientation="horizontal"
+android:padding="16dp">
+
+<!-- CheckBox di paling kiri -->
+<CheckBox
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_vertical" />
+
+<!-- LinearLayout dengan teks di tengah -->
+<LinearLayout
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_weight="1"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_jenis_kerusakan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bersihkan CVT"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/tv_harga_kerusakan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rp.50.000"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+</LinearLayout>
+</LinearLayout>
