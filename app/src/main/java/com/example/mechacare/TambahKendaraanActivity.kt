@@ -6,12 +6,17 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.firestore.FirebaseFirestore
 
 class TambahKendaraanActivity : AppCompatActivity() {
+
+    private lateinit var db: FirebaseFirestore
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tambah_kendaraan)
+
+        db = FirebaseFirestore.getInstance()
 
         // Inisialisasi komponen
         val modelMotor = findViewById<EditText>(R.id.modelMotor)
@@ -31,17 +36,31 @@ class TambahKendaraanActivity : AppCompatActivity() {
             val nomor = nomorPolisi.text.toString()
 
             if (model.isNotEmpty() && tahun.isNotEmpty() && varian.isNotEmpty() && warna.isNotEmpty() && nomor.isNotEmpty()) {
-                // Berhasil menambahkan kendaraan
-                Toast.makeText(this, "Kendaraan berhasil ditambahkan!", Toast.LENGTH_SHORT).show()
+                // Simpan data kendaraan ke Firebase Firestore
+                val kendaraan = hashMapOf(
+                    "model" to model,
+                    "tahun" to tahun,
+                    "varian" to varian,
+                    "warna" to warna,
+                    "nomorPolisi" to nomor
+                )
 
-                // Kirim data ke PilihKendaraanSelectedActivity
-                val intent = Intent(this, PilihKendaraanSelectedActivity::class.java)
-                intent.putExtra("VARIAN_MOTOR", varian)
-                intent.putExtra("NOMOR_POLISI", nomor)
-                startActivity(intent)
+                db.collection("kendaraan")
+                    .add(kendaraan)
+                    .addOnSuccessListener { documentReference ->
+                        Toast.makeText(this, "Kendaraan berhasil ditambahkan!", Toast.LENGTH_SHORT).show()
 
-                // Tutup aktivitas saat ini
-                finish()
+                        // Kirim data ke PilihKendaraanSelectedActivity
+                        val intent = Intent(this, PilihKendaraanSelectedActivity::class.java)
+                        intent.putExtra("KENDARAAN_ID", documentReference.id)  // Kirim ID kendaraan yang baru ditambahkan
+                        startActivity(intent)
+
+                        // Tutup aktivitas saat ini
+                        finish()
+                    }
+                    .addOnFailureListener { e ->
+                        Toast.makeText(this, "Error adding document: ${e.message}", Toast.LENGTH_SHORT).show()
+                    }
             } else {
                 // Tampilkan pesan error
                 Toast.makeText(this, "Lengkapi semua data!", Toast.LENGTH_SHORT).show()

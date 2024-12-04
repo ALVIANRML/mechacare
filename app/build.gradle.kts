@@ -73,6 +73,7 @@ dependencies {
     implementation ("org.osmdroid:osmdroid-geopackage:6.1.14")
     implementation(libs.androidx.constraintlayout)
     implementation(libs.firebase.auth.ktx)
+    implementation(libs.firebase.firestore.ktx)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
