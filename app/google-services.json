@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "562618105037",
+    "project_id": "motofinder-2f3fb",
+    "storage_bucket": "motofinder-2f3fb.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:562618105037:android:c9433c816a191c0555bd84",
+        "android_client_info": {
+          "package_name": "com.example.mechacare"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDABS0yKlk_5zin7mXes5FQ2W4Q6KLQoNY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
