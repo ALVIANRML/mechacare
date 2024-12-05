@@ -68,10 +68,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
+            android:minHeight="48dp"
+            android:onClick="goToAddVehicle"
             android:text="PILIH KENDARAAN"
             android:textColor="@color/red"
-            android:textStyle="bold"
-            android:onClick="goToAddVehicle" />
+            android:textStyle="bold" />
     </LinearLayout>
 
     <!-- Tombol Berikutnya -->

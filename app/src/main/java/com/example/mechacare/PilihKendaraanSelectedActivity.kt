@@ -57,7 +57,7 @@ class PilihKendaraanSelectedActivity : AppCompatActivity() {
         // Tombol Berikutnya
         btnBerikutnya.setOnClickListener {
             // Lanjutkan ke halaman utama atau tujuan berikutnya
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, DataDiri::class.java)
             startActivity(intent)
         }
 

@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mechacare.adapter.BeritaAdapter
 import com.example.mechacare.model.Berita
+import com.example.mechacare.ui.SparepartActivity
 
 class activity_welcome : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,5 +34,28 @@ class activity_welcome : AppCompatActivity() {
             val intent = Intent(this, PilihKendaraanActivity::class.java)
             startActivity(intent)
         }
+
+        // Gambar "Search" untuk pencarian bengkel
+        val ivSearch = findViewById<ImageView>(R.id.iv_search)
+        ivSearch.setOnClickListener {
+            val intent = Intent(this, PencarianBengkel::class.java) // Halaman pencarian bengkel
+            startActivity(intent)
+        }
+
+        // Gambar "Sparepart" untuk Beli Sparepart
+        val  ivJualBeliSparepart = findViewById<ImageView>(R.id. iv_jualBeliSparepart)
+        ivJualBeliSparepart.setOnClickListener {
+            val intent = Intent(this, SparepartActivity::class.java) // Halaman pencarian bengkel
+            startActivity(intent)
+        }
+
+        // Gambar "riwayatService"
+        val   ivRiwayatService = findViewById<ImageView>(R.id. iv_riwayatService)
+        ivRiwayatService.setOnClickListener {
+            val intent = Intent(this, RiwayatService::class.java) // Halaman Riwayat Service
+            startActivity(intent)
+        }
+
     }
 }
+

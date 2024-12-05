@@ -17,6 +17,14 @@
         android:theme="@style/Theme.Design.Light.NoActionBar"
         tools:replace="android:allowBackup"
         tools:targetApi="31">
+        <!-- Aktivitas PilihPerbaikan -->
+        <activity
+            android:name=".PilihPerbaikan"
+            android:exported="true"
+            android:theme="@style/Theme.Design.Light.NoActionBar" />
+        <activity
+            android:name=".DataDiri"
+            android:exported="false" />
         <activity
             android:name=".PembayaranAkhir"
             android:exported="true">
