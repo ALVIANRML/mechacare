@@ -181,7 +181,6 @@ android:textSize="20sp"
             android:id="@+id/recycleview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:scrollbars="vertical"
             >
 
         </androidx.recyclerview.widget.RecyclerView>

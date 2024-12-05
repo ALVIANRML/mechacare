@@ -5,7 +5,7 @@
     android:layout_height="wrap_content"
     android:layout_margin="5dp"
     android:padding="10dp"
-
+android:id="@+id/item_bengkel"
     android:background="@drawable/berita_text_bg">
 
     <ImageView
