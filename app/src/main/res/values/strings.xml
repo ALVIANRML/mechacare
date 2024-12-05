@@ -41,7 +41,8 @@
     <string name="jenis_kendaraan">Jenis Kendaraan</string>
     <string name="honda_vario">Honda Vario</string>
     <string name="biaya_service">Biaya Service</string>
-    <string name="total_service">Rp.50.000</string>"
+    <string name="total_service">Rp.50.000</string>
+    <string name="tv_edit_profile">Edit Profile</string>"
 
 
 </resources>

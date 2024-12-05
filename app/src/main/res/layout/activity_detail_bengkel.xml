@@ -77,7 +77,7 @@
     </RelativeLayout>
 
     <TextView
-        android:id="@+id/iv_jalan"
+        android:id="@+id/tv_jalan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/layout_maps"

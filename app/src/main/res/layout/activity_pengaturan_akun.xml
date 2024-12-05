@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetailBengkel">
+
+    <ImageView
+        android:id="@+id/iv_arrowback"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:importantForAccessibility="no"
+        android:src="@drawable/arrow_back"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+
+
+    <TextView
+        android:id="@+id/tv_nama_bengkel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="@string/tv_edit_profile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/iv_arrowback"
+        app:layout_constraintBottom_toBottomOf="@id/iv_arrowback"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/informasipribadi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@drawable/profile_border"
+        android:layout_marginHorizontal="10dp"
+        android:padding="20dp"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:id="@+id/llinformasipribadi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+
+
+            >
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:text="Pengaturan Akun"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:gravity="start"
+                />
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/label_nama"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/llinformasipribadi"
+            android:layout_marginTop="20dp"
+            android:textStyle="bold"
+            />
+        <EditText
+            android:id="@+id/tv_nama"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:text="@string/nama"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/label_nama"
+            android:textStyle="bold"
+            android:background="@drawable/berita_text_bg"
+            android:textColor="@color/black"
+            android:padding="5dp"
+            />
+
+        <TextView
+            android:id="@+id/label_jenis_kelamin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_jenis_kelamin"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_nama"
+            android:layout_marginTop="20dp"
+            android:textStyle="bold"
+            />
+        <EditText
+            android:id="@+id/tv_jenis_kelamin"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:text="Password"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/label_jenis_kelamin"
+            android:textStyle="bold"
+            android:background="@drawable/berita_text_bg"
+            android:textColor="@color/black"
+            android:padding="5dp"
+            />
+
+
+        <TextView
+            android:id="@+id/label_tanggal_lahir"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Telepon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_jenis_kelamin"
+            android:layout_marginTop="20dp"
+            android:textStyle="bold"
+            />
+
+
+        <EditText
+            android:id="@+id/tv_tanggal_lahir"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:text="Pilih Tanggal Lahir"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/label_tanggal_lahir"
+            android:textStyle="bold"
+            android:background="@drawable/berita_text_bg"
+            android:textColor="@color/black"
+            android:padding="5dp"
+            />
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/informasipribadi"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="Simpan"
+        android:textStyle="bold"
+        android:background="@drawable/profile_border"
+        android:padding="20dp"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

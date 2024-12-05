@@ -1,7 +1,12 @@
 package com.example.mechacare
 
+import android.content.Intent
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
+import android.text.Editable
+import android.text.TextWatcher
+import android.util.Log
+import android.widget.EditText
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -9,41 +14,110 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mechacare.adapter.BengkelAdapter
 import com.example.mechacare.model.Bengkel
+import com.google.firebase.firestore.FirebaseFirestore
 
 class PencarianBengkel : AppCompatActivity() {
+
+    private lateinit var adapter: BengkelAdapter
+    private lateinit var bengkelList: MutableList<Bengkel>
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContentView(R.layout.activity_pencarian_bengkel)
+
+        val arrowBack = findViewById<ImageView>(R.id.iv_arrowback)
+
+            arrowBack.setOnClickListener {
+                val intent = Intent(this, activity_welcome::class.java)
+                startActivity(intent)
+
+            }
+
+        // Set padding for system bars
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets}
-        val items = listOf(
-            Bengkel("Bengkel cuplis M2R", "Jl. Abadi No.101-63, Tj. Rejo, Kec. Medan Sunggal, Kota Medan, Sumatera Utara 20122",R.drawable.image_3),
-            Bengkel("BENGKEL C.O.D", "Jl. Ring Road No.50 A, Sunggal, Kec. Medan Sunggal, Kota Medan, Sumatera Utara 20122",R.drawable.image_3),
-            Bengkel("Bengkel Ono Speed", "HJ6Q+7HW, Tj. Sari, Kec. Medan Selayang, Kota Medan, Sumatera Utara 20154",R.drawable.image_3),
-            Bengkel("Bengkel Ono Speed", "HJ6Q+7HW, Tj. Sari, Kec. Medan Selayang, Kota Medan, Sumatera Utara 20154",R.drawable.image_3),
-            Bengkel("Bengkel Ono Speed", "HJ6Q+7HW, Tj. Sari, Kec. Medan Selayang, Kota Medan, Sumatera Utara 20154",R.drawable.image_3),
-            Bengkel("Bengkel Ono Speed", "HJ6Q+7HW, Tj. Sari, Kec. Medan Selayang, Kota Medan, Sumatera Utara 20154",R.drawable.image_3),
-            Bengkel("Bengkel Ono Speed", "HJ6Q+7HW, Tj. Sari, Kec. Medan Selayang, Kota Medan, Sumatera Utara 20154",R.drawable.image_3),
-            Bengkel("Bengkel Ono Speed", "HJ6Q+7HW, Tj. Sari, Kec. Medan Selayang, Kota Medan, Sumatera Utara 20154",R.drawable.image_3),
-            Bengkel("Bengkel Ono Speed", "HJ6Q+7HW, Tj. Sari, Kec. Medan Selayang, Kota Medan, Sumatera Utara 20154",R.drawable.image_3),
-            Bengkel("Bengkel Ono Speed", "HJ6Q+7HW, Tj. Sari, Kec. Medan Selayang, Kota Medan, Sumatera Utara 20154",R.drawable.image_3),
-            Bengkel("Bengkel Ono Speed", "HJ6Q+7HW, Tj. Sari, Kec. Medan Selayang, Kota Medan, Sumatera Utara 20154",R.drawable.image_3),
-            Bengkel("Bengkel Ono Speed", "HJ6Q+7HW, Tj. Sari, Kec. Medan Selayang, Kota Medan, Sumatera Utara 20154",R.drawable.image_3),
-            Bengkel("Bengkel Ono Speed", "HJ6Q+7HW, Tj. Sari, Kec. Medan Selayang, Kota Medan, Sumatera Utara 20154",R.drawable.image_3),
-            Bengkel("Bengkel Ono Speed", "HJ6Q+7HW, Tj. Sari, Kec. Medan Selayang, Kota Medan, Sumatera Utara 20154",R.drawable.image_3),
-            Bengkel("Bengkel Ono Speed", "HJ6Q+7HW, Tj. Sari, Kec. Medan Selayang, Kota Medan, Sumatera Utara 20154",R.drawable.image_3),
-            Bengkel("Bengkel Ono Speed", "HJ6Q+7HW, Tj. Sari, Kec. Medan Selayang, Kota Medan, Sumatera Utara 20154",R.drawable.image_3),
-            Bengkel("Bengkel Ono Speed", "HJ6Q+7HW, Tj. Sari, Kec. Medan Selayang, Kota Medan, Sumatera Utara 20154",R.drawable.image_3),
-            Bengkel("Bengkel Ono Speed", "HJ6Q+7HW, Tj. Sari, Kec. Medan Selayang, Kota Medan, Sumatera Utara 20154",R.drawable.image_3),
-            Bengkel("Bengkel Ono Speed", "HJ6Q+7HW, Tj. Sari, Kec. Medan Selayang, Kota Medan, Sumatera Utara 20154",R.drawable.image_3),
-            Bengkel("Bengkel Ono Speed", "HJ6Q+7HW, Tj. Sari, Kec. Medan Selayang, Kota Medan, Sumatera Utara 20154",R.drawable.image_3),
-            Bengkel("Bengkel Resmi Honda AHASS 16864 DKS Setia Budi", "Komp Setia Budi Point No. A1 -17, Jl. Setia Budi",R.drawable.image_3)
-        )
+            insets
+        }
+
+        // Initialize Firestore
+        val db = FirebaseFirestore.getInstance()
+
+        // RecyclerView setup
         val recyclerView: RecyclerView = findViewById(R.id.recycleview)
         recyclerView.layoutManager = LinearLayoutManager(this)
-        recyclerView.adapter = BengkelAdapter(items)
+
+        bengkelList = mutableListOf()
+
+        // Set adapter dengan listener
+        adapter = BengkelAdapter(bengkelList) { bengkel ->
+            // Ketika item diklik, kirim data ke DetailBengkel
+            val intent = Intent(this, DetailBengkel::class.java).apply {
+                putExtra("nama", bengkel.nama)
+                putExtra("alamat", bengkel.alamat)
+                putExtra("gambar", bengkel.gambar) // Jika gambar adalah resource ID
+                // Tambahkan koordinat atau data lainnya sesuai kebutuhan
+                // putExtra("latitude", bengkel.latitude)
+                // putExtra("longitude", bengkel.longitude)
+            }
+            startActivity(intent)
+        }
+
+        recyclerView.adapter = adapter
+
+        // Fetch all data initially
+        fetchBengkelData(db)
+
+        // Handle search input
+        val searchEditText = findViewById<EditText>(R.id.search_input)
+        searchEditText.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable?) {
+                val query = s.toString()
+                if (query.isNotEmpty()) {
+                    searchBengkel(db, query)
+                } else {
+                    // Fetch all data again when search is empty
+                    fetchBengkelData(db)
+                }
+            }
+
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
+        })
     }
+
+    private fun fetchBengkelData(db: FirebaseFirestore) {
+        db.collection("bengkel")
+            .get()
+            .addOnSuccessListener { documents ->
+                bengkelList.clear()
+                for (document in documents) {
+                    val bengkel = document.toObject(Bengkel::class.java)
+                    bengkelList.add(bengkel)
+                }
+                adapter.notifyDataSetChanged()
+            }
+            .addOnFailureListener { exception ->
+                Log.e("Firestore", "Error getting documents: ", exception)
+            }
     }
+
+    private fun searchBengkel(db: FirebaseFirestore, query: String) {
+        db.collection("bengkel")
+            .orderBy("nama") // Pastikan "nama" ada di Firestore Index
+            .startAt(query)
+            .endAt("$query\uf8ff")
+            .get()
+            .addOnSuccessListener { documents ->
+                bengkelList.clear()
+                for (document in documents) {
+                    val bengkel = document.toObject(Bengkel::class.java)
+                    bengkelList.add(bengkel)
+                }
+                adapter.notifyDataSetChanged()
+            }
+            .addOnFailureListener { exception ->
+                Log.e("Firestore", "Error searching documents: ", exception)
+            }
+    }
+}

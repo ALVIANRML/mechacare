@@ -8,9 +8,9 @@
     tools:context=".PencarianBengkel">
 
     <ImageView
-        android:id="@+id/iv_search"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/iv_arrowback"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:importantForAccessibility="no"
         android:src="@drawable/arrow_back"
         app:layout_constraintStart_toStartOf="parent"
