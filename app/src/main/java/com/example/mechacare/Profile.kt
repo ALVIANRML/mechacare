@@ -1,6 +1,7 @@
 package com.example.mechacare
 
 import android.os.Bundle
+import android.view.View
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -59,5 +60,8 @@ class Profile : AppCompatActivity() {
         } else {
             Toast.makeText(this, "Pengguna tidak ditemukan!", Toast.LENGTH_SHORT).show()
         }
+
+        val navbar = findViewById<View>(R.id.navbar)
+            NavBarComponent(this, navbar)
     }
 }

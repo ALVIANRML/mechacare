@@ -1,9 +1,11 @@
 package com.example.mechacare.ui
 
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.mechacare.NavBarComponent
 import com.example.mechacare.R
 import com.example.mechacare.adapter.SparepartAdapter
 import com.example.mechacare.model.Sparepart
@@ -22,5 +24,8 @@ class SparepartActivity : AppCompatActivity() {
         val recyclerView: RecyclerView = findViewById(R.id.rv_sparepart)
         recyclerView.layoutManager = GridLayoutManager(this, 2)
         recyclerView.adapter = SparepartAdapter(spareparts)
+
+        val navbar = findViewById<View>(R.id.navbar)
+        NavBarComponent(this, navbar)
     }
 }
