@@ -33,12 +33,19 @@
             app:queryHint="Cari Sesuatu..." />
     </LinearLayout>
 
-
     <!-- RecyclerView untuk daftar -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_sparepart"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        tools:listitem="@layout/sparepart_item" />
+        tools:listitem="@layout/sparepart_item" >
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <include
+        layout="@layout/navbar"
+        android:id="@+id/navbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
 </LinearLayout>
