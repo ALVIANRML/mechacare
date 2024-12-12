@@ -250,11 +250,24 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <include
-        android:id="@+id/navbar"
-        layout="@layout/navbar"
-        android:layout_width="match_parent"
+    <RelativeLayout
+        android:id="@+id/containernavbar"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_gravity="bottom"
+        tools:ignore="MissingConstraints">
+
+        <FrameLayout
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/navbar" />
+
+        <include
+            layout="@layout/navbar"
+            android:id="@+id/navbar"/>
+
+    </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

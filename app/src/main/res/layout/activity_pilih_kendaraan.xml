@@ -3,84 +3,110 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:paddingVertical="16dp">
 
-    <!-- Tombol Kembali -->
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_back"
-
-        android:layout_marginBottom="16dp" />
-
-    <!-- Deskripsi -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Tersedia kapan pun anda mau tanpa memikirkan waktu anda"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        android:gravity="center"
-        android:layout_marginBottom="16dp"
-        android:textSize="16sp" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Informasi Motor"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        android:textSize="14sp"
-        android:layout_marginBottom="29dp" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Tambahkan Motor untuk diperbaiki"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        android:textSize="14sp"
-        android:layout_marginBottom="16dp" />
-
-    <!-- Informasi jika belum ada kendaraan -->
+    <!-- Konten Utama -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/bg_dashed_box"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:padding="16dp">
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
 
-        <!-- Teks: Anda belum memilih kendaraan -->
-        <TextView
+        <!-- Tombol Kembali -->
+        <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="Anda belum memilih kendaraan"
+            android:src="@drawable/ic_back"
+            android:layout_marginBottom="16dp"
+            android:paddingLeft="16dp"/>
+
+        <!-- Deskripsi -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tersedia kapan pun anda mau tanpa memikirkan waktu anda"
             android:textColor="@color/black"
-            android:textSize="16sp"
             android:textStyle="bold"
-            android:layout_marginBottom="16dp" />
-
-        <!-- Teks: Pilih Kendaraan -->
-        <TextView
-            android:id="@+id/btnPilihKendaraan"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:gravity="center"
-            android:minHeight="48dp"
-            android:onClick="goToAddVehicle"
-            android:text="PILIH KENDARAAN"
-            android:textColor="@color/red"
-            android:textStyle="bold" />
+            android:layout_marginBottom="16dp"
+            android:textSize="16sp"
+            android:layout_marginHorizontal="16dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Informasi Motor"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:layout_marginBottom="29dp"
+            android:layout_marginHorizontal="16dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tambahkan Motor untuk diperbaiki"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:layout_marginBottom="16dp"
+            android:layout_marginHorizontal="16dp"/>
+
+        <!-- Informasi jika belum ada kendaraan -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_dashed_box"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:layout_marginHorizontal="16dp">
+
+            <!-- Teks: Anda belum memilih kendaraan -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Anda belum memilih kendaraan"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Teks: Pilih Kendaraan -->
+            <TextView
+                android:id="@+id/btnPilihKendaraan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:minHeight="48dp"
+                android:onClick="goToAddVehicle"
+                android:text="PILIH KENDARAAN"
+                android:textColor="@color/red"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- Tombol Berikutnya -->
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="BERIKUTNYA"
+            android:backgroundTint="@color/red"
+            android:textColor="@color/white"
+            android:layout_marginTop="16dp"
+            android:layout_marginHorizontal="16dp"/>
     </LinearLayout>
 
-    <!-- Tombol Berikutnya -->
-    <Button
+    <!-- Bottom Navbar -->
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="BERIKUTNYA"
-        android:backgroundTint="@color/red"
-        android:textColor="@color/white"
-        android:layout_marginTop="16dp" />
+        android:layout_height="wrap_content">
+
+        <include
+            android:id="@+id/navbar"
+            layout="@layout/navbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </FrameLayout>
+
 </LinearLayout>

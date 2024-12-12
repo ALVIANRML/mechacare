@@ -61,4 +61,5 @@ class activity_welcome : AppCompatActivity() {
         val navbar = findViewById<View>(R.id.navbar)
                 NavBarComponent(this, navbar)
     }
+
 }
