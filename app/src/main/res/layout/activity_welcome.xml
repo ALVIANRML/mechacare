@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".activity_welcome">
 
-
+    <!-- TextView Selamat Datang -->
     <TextView
         android:id="@+id/tv_welcome"
         android:layout_width="wrap_content"
@@ -19,9 +19,9 @@
         android:textSize="17sp"
         android:textStyle="bold"
         android:textColor="@color/black"
-        android:text="@string/selamat_datang"
-        />
+        android:text="@string/selamat_datang" />
 
+    <!-- Gambar Welcome -->
     <ImageView
         android:id="@+id/iv_welcome"
         android:layout_width="wrap_content"
@@ -31,9 +31,9 @@
         app:layout_constraintTop_toBottomOf="@id/tv_welcome"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="40dp"
-        />
+        android:layout_marginTop="40dp" />
 
+    <!-- TextView Layanan -->
     <TextView
         android:id="@+id/tv_layanan"
         android:layout_width="wrap_content"
@@ -43,11 +43,10 @@
         android:text="@string/layanan"
         android:textStyle="bold"
         android:textColor="@color/black"
-android:textSize="20sp"
-        android:layout_marginTop="20dp"
-        />
+        android:textSize="20sp"
+        android:layout_marginTop="20dp" />
 
-
+    <!-- LinearLayout Layanan -->
     <LinearLayout
         android:id="@+id/ll_layanan"
         android:layout_width="match_parent"
@@ -58,103 +57,97 @@ android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         android:gravity="center"
         android:orientation="horizontal">
-
-<!--        pencarian bengkel terdekat-->
+        <!-- Pencarian Bengkel Terdekat -->
         <LinearLayout
-            android:id="@+id/llpencarian"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:orientation="vertical"
-            android:gravity="center"
-            tools:ignore="UseCompoundDrawables">
+            android:gravity="center">
             <ImageView
                 android:id="@+id/iv_search"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:importantForAccessibility="no"
-                android:src="@drawable/search_icon"/>
-
+                android:src="@drawable/search_icon" />
             <TextView
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textStyle="bold"
-                android:text="@string/pencarian_bengkel_terdekat"/>
+                android:text="@string/pencarian_bengkel_terdekat" />
         </LinearLayout>
 
-<!--        Jual beli sparepart-->
+        <!-- Jual Beli Sparepart -->
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:orientation="vertical"
-            android:gravity="center"
-            tools:ignore="UseCompoundDrawables">
+            android:gravity="center">
             <ImageView
                 android:id="@+id/iv_jualBeliSparepart"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:importantForAccessibility="no"
-                android:src="@drawable/image_2"/>
-
+                android:src="@drawable/image_2" />
             <TextView
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textStyle="bold"
-                android:text="@string/jual_beli_sparepart"/>
+                android:text="@string/jual_beli_sparepart" />
         </LinearLayout>
 
+        <!-- Home Service -->
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:orientation="vertical"
-            android:gravity="center"
-            tools:ignore="UseCompoundDrawables">
+            android:gravity="center">
             <ImageView
                 android:id="@+id/iv_homeService"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:importantForAccessibility="no"
-                android:src="@drawable/home"/>
-
+                android:src="@drawable/home" />
             <TextView
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textStyle="bold"
-                android:text="@string/home_service"/>
+                android:text="@string/home_service" />
         </LinearLayout>
 
+        <!-- Riwayat Service -->
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:orientation="vertical"
-            android:gravity="center"
-            tools:ignore="UseCompoundDrawables">
+            android:gravity="center">
             <ImageView
                 android:id="@+id/iv_riwayatService"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:importantForAccessibility="no"
-                android:src="@drawable/hamburger"/>
-
+                android:src="@drawable/hamburger" />
             <TextView
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textStyle="bold"
-                android:text="@string/riwayat_service"/>
+                android:text="@string/riwayat_service" />
         </LinearLayout>
-
     </LinearLayout>
+
+    <!-- TextView Berita -->
+
 
     <TextView
         android:id="@+id/tv_berita"
@@ -169,30 +162,25 @@ android:textSize="20sp"
         android:layout_marginTop="50dp"
         tools:ignore="HardcodedText" />
 
-    <LinearLayout
+    <!-- RecyclerView untuk Berita -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycleview"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_height="0dp"
+        android:scrollbars="vertical"
         app:layout_constraintStart_toStartOf="@id/tv_welcome"
         app:layout_constraintTop_toBottomOf="@id/tv_berita"
-        android:orientation="vertical"
-        >
+        app:layout_constraintBottom_toTopOf="@id/navbar"
+        android:layout_marginBottom="16dp"/>
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycleview"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            >
-
-        </androidx.recyclerview.widget.RecyclerView>
-    </LinearLayout>
-
+    <!-- Navbar -->
     <include
-        android:id="@+id/navbar"
         layout="@layout/navbar"
+        android:id="@+id/navbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent" />
-
-
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

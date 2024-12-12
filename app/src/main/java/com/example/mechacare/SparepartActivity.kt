@@ -19,7 +19,10 @@ class SparepartActivity : AppCompatActivity() {
         val spareparts = listOf(
             Sparepart(R.drawable.aki, "Aki Motor"),
             Sparepart(R.drawable.mur, "Mur Kopling"),
-            // Tambahkan item lainnya
+            Sparepart(R.drawable.spion, "Spion Motor"),
+            Sparepart(R.drawable.gear, "Gear Rantai Motor"),
+            Sparepart(R.drawable.spull, "Spull Assy"),
+            Sparepart(R.drawable.knalpot, "Knalpot Motor"),
         )
         val recyclerView: RecyclerView = findViewById(R.id.rv_sparepart)
         recyclerView.layoutManager = GridLayoutManager(this, 2)
