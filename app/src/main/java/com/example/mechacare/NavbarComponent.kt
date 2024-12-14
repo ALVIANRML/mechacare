@@ -18,7 +18,7 @@ class NavbarComponent (context: Context, navbar: View) {
         }
 
         shopButton.setOnClickListener {
-            val intent = Intent(context, SparepartActivity::class.java)
+            val intent = Intent(context, PencarianBengkel::class.java)
             context.startActivity(intent)
         }
         profileButton.setOnClickListener {
