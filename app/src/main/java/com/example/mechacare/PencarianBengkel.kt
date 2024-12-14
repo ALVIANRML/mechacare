@@ -27,49 +27,34 @@ class PencarianBengkel : AppCompatActivity() {
         setContentView(R.layout.activity_pencarian_bengkel)
 
         val arrowBack = findViewById<ImageView>(R.id.iv_arrowback)
+        arrowBack.setOnClickListener {
+            val intent = Intent(this, activity_welcome::class.java)
+            startActivity(intent)
+        }
 
-            arrowBack.setOnClickListener {
-                val intent = Intent(this, activity_welcome::class.java)
-                startActivity(intent)
-
-            }
-
-        // Set padding for system bars
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
 
-        // Initialize Firestore
         val db = FirebaseFirestore.getInstance()
 
-        // RecyclerView setup
         val recyclerView: RecyclerView = findViewById(R.id.recycleview)
         recyclerView.layoutManager = LinearLayoutManager(this)
-
         bengkelList = mutableListOf()
-
-        // Set adapter dengan listener
         adapter = BengkelAdapter(bengkelList) { bengkel ->
-            // Ketika item diklik, kirim data ke DetailBengkel
             val intent = Intent(this, DetailBengkel::class.java).apply {
                 putExtra("nama", bengkel.nama)
                 putExtra("alamat", bengkel.alamat)
-                putExtra("gambar", bengkel.gambar) // Jika gambar adalah resource ID
-                // Tambahkan koordinat atau data lainnya sesuai kebutuhan
-                // putExtra("latitude", bengkel.latitude)
-                // putExtra("longitude", bengkel.longitude)
+                putExtra("gambar", bengkel.gambar) // Jika gambar adalah URL
             }
             startActivity(intent)
         }
-
         recyclerView.adapter = adapter
 
-        // Fetch all data initially
         fetchBengkelData(db)
 
-        // Handle search input
         val searchEditText = findViewById<EditText>(R.id.search_input)
         searchEditText.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {
@@ -77,7 +62,6 @@ class PencarianBengkel : AppCompatActivity() {
                 if (query.isNotEmpty()) {
                     searchBengkel(db, query)
                 } else {
-                    // Fetch all data again when search is empty
                     fetchBengkelData(db)
                 }
             }
@@ -124,5 +108,4 @@ class PencarianBengkel : AppCompatActivity() {
                 Log.e("Firestore", "Error searching documents: ", exception)
             }
     }
-
 }
