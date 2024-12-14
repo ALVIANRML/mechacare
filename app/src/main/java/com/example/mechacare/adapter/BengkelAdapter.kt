@@ -14,7 +14,7 @@ class BengkelAdapter(
     private val onBengkelClickListener: (Bengkel) -> Unit // Listener klik untuk item
 ) : RecyclerView.Adapter<BengkelAdapter.BengkelViewHolder>() {
 
-    inner class BengkelViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
+    inner class BengkelViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val namaBengkel: TextView = itemView.findViewById(R.id.tv_nama_bengkel)
         val alamatBengkel: TextView = itemView.findViewById(R.id.tv_alamat_bengkel)
         val gambarBengkel: ImageView = itemView.findViewById(R.id.ivbengkel)

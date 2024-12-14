@@ -17,6 +17,15 @@
         android:theme="@style/Theme.Design.Light.NoActionBar"
         tools:replace="android:allowBackup"
         tools:targetApi="31">
+        <activity
+            android:name=".IsiBerita"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <!-- Aktivitas PilihPerbaikan -->
         <activity
             android:name=".PilihPerbaikan"
@@ -24,17 +33,16 @@
             android:theme="@style/Theme.Design.Light.NoActionBar" />
         <activity
             android:name=".DataDiri"
-            android:theme="@style/Theme.Design.Light.NoActionBar"
-            android:exported="true" />
+            android:exported="true"
+            android:theme="@style/Theme.Design.Light.NoActionBar" />
         <activity
             android:name=".PengaturanAkun"
-            android:theme="@style/Theme.Design.Light.NoActionBar"
-            android:exported="true"/>
-
+            android:exported="true"
+            android:theme="@style/Theme.Design.Light.NoActionBar" />
         <activity
             android:name=".EditProfile"
-            android:theme="@style/Theme.Design.Light.NoActionBar"
-            android:exported="true" />
+            android:exported="true"
+            android:theme="@style/Theme.Design.Light.NoActionBar" />
         <activity
             android:name=".PembayaranAkhir"
             android:exported="true"
@@ -49,8 +57,8 @@
             android:theme="@style/Theme.Design.Light.NoActionBar" />
         <activity
             android:name=".Profile"
-            android:theme="@style/Theme.Design.Light.NoActionBar"
-            android:exported="true" />
+            android:exported="true"
+            android:theme="@style/Theme.Design.Light.NoActionBar" />
 
         <meta-data
             android:name="org.osmdroid.config"
