@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
+import android.view.View
 import android.widget.EditText
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
@@ -84,6 +85,9 @@ class PencarianBengkel : AppCompatActivity() {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
         })
+
+        val navbar = findViewById<View>(R.id.navbar)
+        NavbarComponent(this, navbar)
     }
 
     private fun fetchBengkelData(db: FirebaseFirestore) {
@@ -120,4 +124,5 @@ class PencarianBengkel : AppCompatActivity() {
                 Log.e("Firestore", "Error searching documents: ", exception)
             }
     }
+
 }

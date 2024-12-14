@@ -58,27 +58,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:gravity="center"
         android:orientation="horizontal">
-        <!-- Pencarian Bengkel Terdekat -->
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:gravity="center">
-            <ImageView
-                android:id="@+id/iv_search"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:importantForAccessibility="no"
-                android:src="@drawable/search_icon" />
-            <TextView
-                android:layout_width="80dp"
-                android:layout_height="wrap_content"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textStyle="bold"
-                android:text="@string/pencarian_bengkel_terdekat" />
-        </LinearLayout>
 
         <!-- Jual Beli Sparepart -->
         <LinearLayout

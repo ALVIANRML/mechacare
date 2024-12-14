@@ -28,7 +28,5 @@ class SparepartActivity : AppCompatActivity() {
         recyclerView.layoutManager = GridLayoutManager(this, 2)
         recyclerView.adapter = SparepartAdapter(spareparts)
 
-        val navbar = findViewById<View>(R.id.navbar)
-        NavbarComponent(this, navbar)
     }
 }

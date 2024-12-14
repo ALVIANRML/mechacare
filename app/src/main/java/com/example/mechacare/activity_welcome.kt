@@ -36,12 +36,6 @@ class activity_welcome : AppCompatActivity() {
             startActivity(intent)
         }
 
-        // Gambar "Search" untuk pencarian bengkel
-        val ivSearch = findViewById<ImageView>(R.id.iv_search)
-        ivSearch.setOnClickListener {
-            val intent = Intent(this, PencarianBengkel::class.java) // Halaman pencarian bengkel
-            startActivity(intent)
-        }
 
         // Gambar "Sparepart" untuk Beli Sparepart
         val  ivJualBeliSparepart = findViewById<ImageView>(R.id. iv_jualBeliSparepart)
