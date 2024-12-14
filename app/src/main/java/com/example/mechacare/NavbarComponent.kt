@@ -5,7 +5,7 @@ import android.content.Intent
 import android.view.View
 import com.example.mechacare.ui.SparepartActivity
 
-class NavBarComponent (context: Context, navbar: View) {
+class NavbarComponent (context: Context, navbar: View) {
     init {
 
         val homeButton: View = navbar.findViewById(R.id.nav_home)

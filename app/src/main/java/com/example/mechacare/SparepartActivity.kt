@@ -5,7 +5,7 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.mechacare.NavBarComponent
+import com.example.mechacare.NavbarComponent
 import com.example.mechacare.R
 import com.example.mechacare.adapter.SparepartAdapter
 import com.example.mechacare.model.Sparepart
@@ -29,6 +29,6 @@ class SparepartActivity : AppCompatActivity() {
         recyclerView.adapter = SparepartAdapter(spareparts)
 
         val navbar = findViewById<View>(R.id.navbar)
-        NavBarComponent(this, navbar)
+        NavbarComponent(this, navbar)
     }
 }
