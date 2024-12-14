@@ -62,7 +62,7 @@ class Profile : AppCompatActivity() {
         }
 
         val navbar = findViewById<View>(R.id.navbar)
-            NavBarComponent(this, navbar)
+            NavbarComponent(this, navbar)
     }
 
 }
