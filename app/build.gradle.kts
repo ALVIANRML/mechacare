@@ -57,6 +57,7 @@ android {
 
 dependencies {
     implementation ("com.github.bumptech.glide:glide:4.16.0")
+    implementation(libs.firebase.storage.ktx)
     annotationProcessor ("com.github.bumptech.glide:compiler:4.16.0")
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
@@ -84,4 +85,7 @@ dependencies {
     debugImplementation(libs.androidx.ui.test.manifest)
     implementation(platform("com.google.firebase:firebase-bom:33.6.0"))
     implementation("com.google.firebase:firebase-analytics")
+    implementation("com.google.firebase:firebase-storage")
+    implementation("com.google.firebase:firebase-firestore")
+    implementation("com.google.firebase:firebase-database")
 }
