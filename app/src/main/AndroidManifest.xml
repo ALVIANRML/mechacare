@@ -18,6 +18,9 @@
         tools:replace="android:allowBackup"
         tools:targetApi="31">
         <activity
+            android:name=".BuktiBookingActivity"
+            android:exported="false" />
+        <activity
             android:name=".IsiBerita"
             android:exported="true">
             <intent-filter>
@@ -25,8 +28,7 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <!-- Aktivitas PilihPerbaikan -->
+        </activity> <!-- Aktivitas PilihPerbaikan -->
         <activity
             android:name=".PilihPerbaikan"
             android:exported="true"

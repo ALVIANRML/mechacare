@@ -19,9 +19,13 @@ class DataDiri : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_data_diri)
 
+        // Ambil kendaraanId dari Intent
+        val kendaraanId = intent.getStringExtra("KENDARAAN_ID") ?: ""
+
         // Initialize Firestore
         firestore = FirebaseFirestore.getInstance()
 
+        // Inisialisasi elemen tampilan
         val backButton = findViewById<ImageButton>(R.id.backButton)
         val fullNameEditText = findViewById<EditText>(R.id.fullName)
         val phoneNumberEditText = findViewById<EditText>(R.id.phoneNumber)
@@ -31,7 +35,7 @@ class DataDiri : AppCompatActivity() {
         val deskripsiEditText = findViewById<EditText>(R.id.deskripsi)  // EditText untuk deskripsi
         val nextButton = findViewById<Button>(R.id.nextButton)
 
-        // Membuka activity PilihKendaraanSelectedActivity
+        // Membuka activity PilihKendaraanSelectedActivity saat backButton diklik
         backButton.setOnClickListener {
             val intent = Intent(this@DataDiri, PilihKendaraanSelectedActivity::class.java)
             startActivity(intent)
@@ -68,23 +72,32 @@ class DataDiri : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            // Simpan data pengguna ke Firestore
+            // Simpan data pengguna ke Firestore, termasuk kendaraanId
             val userData = hashMapOf(
                 "fullName" to fullName,
                 "phoneNumber" to phoneNumber,
                 "email" to email,
-                "tanggalService" to tanggalService, // Simpan tanggal service juga
+                "tanggalService" to tanggalService, // Simpan tanggal service
                 "alamat" to alamat,  // Simpan alamat
-                "deskripsi" to deskripsi // Simpan deskripsi
+                "deskripsi" to deskripsi, // Simpan deskripsi
+                "kendaraanId" to kendaraanId // Simpan kendaraanId untuk referensi kendaraan
             )
 
             firestore.collection("users")
                 .add(userData)
-                .addOnSuccessListener {
+                .addOnSuccessListener { documentReference ->
                     Toast.makeText(this, "Data berhasil disimpan!", Toast.LENGTH_SHORT).show()
 
-                    // Intent ke halaman PilihPerbaikan
+                    // Kirimkan data ke PilihPerbaikan terlebih dahulu
                     val intent = Intent(this@DataDiri, PilihPerbaikan::class.java)
+                    intent.putExtra("USER_ID", documentReference.id) // Kirim ID pengguna yang baru ditambahkan
+                    intent.putExtra("KENDARAAN_ID", kendaraanId) // Kirim kendaraanId
+                    intent.putExtra("FULL_NAME", fullName) // Kirim nama lengkap pengguna
+                    intent.putExtra("PHONE_NUMBER", phoneNumber) // Kirim nomor telepon pengguna
+                    intent.putExtra("EMAIL", email) // Kirim email pengguna
+                    intent.putExtra("TANGGAL_SERVICE", tanggalService) // Kirim tanggal service
+                    intent.putExtra("ALAMAT", alamat) // Kirim alamat
+                    intent.putExtra("DESKRIPSI", deskripsi) // Kirim deskripsi
                     startActivity(intent)
                 }
                 .addOnFailureListener { e ->

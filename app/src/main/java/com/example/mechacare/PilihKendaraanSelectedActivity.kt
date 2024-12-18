@@ -56,10 +56,12 @@ class PilihKendaraanSelectedActivity : AppCompatActivity() {
 
         // Tombol Berikutnya
         btnBerikutnya.setOnClickListener {
-            // Lanjutkan ke halaman utama atau tujuan berikutnya
+            // Kirim kendaraanId ke halaman DataDiri
             val intent = Intent(this, DataDiri::class.java)
+            intent.putExtra("KENDARAAN_ID", kendaraanId)
             startActivity(intent)
         }
+
 
         // Tombol Kembali
         backButton.setOnClickListener {

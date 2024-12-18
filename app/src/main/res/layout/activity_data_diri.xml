@@ -47,24 +47,28 @@
         android:id="@+id/fullName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:hint="Nama Lengkap"
-        android:layout_marginTop="8dp" />
+        android:minHeight="48dp" />
 
     <EditText
         android:id="@+id/phoneNumber"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Nomor Telepon"
         android:layout_marginTop="8dp"
-        android:inputType="phone" />
+        android:hint="Nomor Telepon"
+        android:inputType="phone"
+        android:minHeight="48dp" />
 
     <EditText
         android:id="@+id/email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Email"
         android:layout_marginTop="8dp"
-        android:inputType="textEmailAddress" />
+        android:layout_marginBottom="16dp"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:minHeight="48dp" />
 
     <TextView
         android:layout_width="match_parent"
@@ -80,15 +84,18 @@
         android:id="@+id/alamat"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:hint="Alamat"
-        android:layout_marginTop="8dp" />
+        android:minHeight="48dp" />
 
     <EditText
         android:id="@+id/deskripsi"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp"
         android:hint="Deskripsi"
-        android:layout_marginTop="8dp" />
+        android:minHeight="48dp" />
 
     <TextView
         android:layout_width="match_parent"
@@ -104,19 +111,21 @@
         android:id="@+id/tanggal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Pilih Tanggal"
         android:layout_marginTop="8dp"
+        android:clickable="true"
         android:focusable="false"
-        android:clickable="true" />
+        android:hint="Pilih Tanggal"
+        android:minHeight="48dp" />
 
 
     <Button
         android:id="@+id/nextButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="BERIKUTNYA"
         android:layout_marginTop="29dp"
         android:backgroundTint="@android:color/holo_red_dark"
+        android:minHeight="48dp"
+        android:text="BERIKUTNYA"
         android:textColor="@android:color/white" />
 
 </LinearLayout>
