@@ -26,8 +26,7 @@ class DetailBengkel : AppCompatActivity() {
         val arrowback: ImageView = findViewById(R.id.iv_arrowback)
 
         arrowback.setOnClickListener {
-            val intent = Intent(this, PencarianBengkel::class.java)
-            startActivity(intent)
+            finish() 
         }
 
         // Ambil data dari Intent

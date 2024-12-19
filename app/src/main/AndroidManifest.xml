@@ -14,21 +14,20 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:usesCleartextTraffic="true"
         android:theme="@style/Theme.Design.Light.NoActionBar"
         tools:replace="android:allowBackup"
         tools:targetApi="31">
+        <meta-data
+            android:name="com.razorpay.ApiKey"
+            android:value="RAZORPAY_API_KEY" />
         <activity
             android:name=".BuktiBookingActivity"
             android:exported="false" />
         <activity
             android:name=".IsiBerita"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity> <!-- Aktivitas PilihPerbaikan -->
+            android:exported="true"/>
+        <!-- Aktivitas PilihPerbaikan -->
         <activity
             android:name=".PilihPerbaikan"
             android:exported="true"

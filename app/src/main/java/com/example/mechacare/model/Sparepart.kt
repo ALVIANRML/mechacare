@@ -1,6 +1,10 @@
 package com.example.mechacare.model
 
-data class Sparepart (
-    val imageadd: Int,
-    val deskripsi: String
+import com.example.mechacare.R
+
+data class Sparepart(
+    val nama: String = "",
+    val harga: Int = 0,
+    val deskripsi: String = "",
+    val foto: String = "" // Atau tipe data yang sesuai
 )
