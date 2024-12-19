@@ -11,7 +11,9 @@ android {
 
     buildFeatures {
         viewBinding = true
+
     }
+
 
     defaultConfig {
         applicationId = "com.example.mechacare"
@@ -52,11 +54,13 @@ android {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
+
     }
 }
 
 dependencies {
-    implementation ("com.github.bumptech.glide:glide:4.16.0")
+    implementation (libs.stripe.android)
+    implementation (libs.glide)
     implementation(libs.firebase.storage.ktx)
     annotationProcessor ("com.github.bumptech.glide:compiler:4.16.0")
     implementation(libs.androidx.core.ktx)
@@ -88,4 +92,10 @@ dependencies {
     implementation("com.google.firebase:firebase-storage")
     implementation("com.google.firebase:firebase-firestore")
     implementation("com.google.firebase:firebase-database")
+
+//    payment
+    implementation ("com.razorpay:checkout:1.6.40")
+    implementation ("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
 }
+

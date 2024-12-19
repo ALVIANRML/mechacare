@@ -1,5 +1,7 @@
 [versions]
 agp = "8.6.0"
+androidsdk = "2.5.1"
+glide = "4.16.0"
 kotlin = "1.9.0"
 coreKtx = "1.15.0"
 junit = "4.13.2"
@@ -15,9 +17,14 @@ constraintlayout = "2.1.4"
 firebaseAuthKtx = "23.1.0"
 firebaseFirestoreKtx = "25.1.1"
 firebaseStorageKtx = "21.0.1"
+stripeAndroid = "20.0.0"
+uikit = "2.0.0-SANDBOX"
+uikitVersion = "1.23.1"
 
 [libraries]
+androidsdk = { module = "com.midtrans:androidsdk", version.ref = "androidsdk" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+glide = { module = "com.github.bumptech.glide:glide", version.ref = "glide" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
@@ -38,6 +45,9 @@ androidx-constraintlayout = { group = "androidx.constraintlayout", name = "const
 firebase-auth-ktx = { group = "com.google.firebase", name = "firebase-auth-ktx", version.ref = "firebaseAuthKtx" }
 firebase-firestore-ktx = { group = "com.google.firebase", name = "firebase-firestore-ktx", version.ref = "firebaseFirestoreKtx" }
 firebase-storage-ktx = { group = "com.google.firebase", name = "firebase-storage-ktx", version.ref = "firebaseStorageKtx" }
+midtranst-uikit = { module = "midtranst:uikit", version.ref = "uikitVersion" }
+stripe-android = { module = "com.stripe:stripe-android", version.ref = "stripeAndroid" }
+uikit = { module = "com.midtrans:uikit", version.ref = "uikit" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
